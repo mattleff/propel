@@ -134,6 +134,8 @@ class PHP5ObjectBuilder extends ObjectBuilder
 					// this seems to be closest in meaning.
 					$defDt = new DateTime($val);
 					$defaultValue = var_export($defDt->format($fmt), true);
+				} else {
+					$defaultValue = $val;
 				}
 			} catch (Exception $x) {
 				// prevent endless loop when timezone is undefined
